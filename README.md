@@ -12,6 +12,11 @@ A plugin that helps you use android moveTaskToBack.
 move_task_to_back: ^x.y.z
 ```
 
+```
+flutter_move_task_back:
+  git: git@github.com:angcyo/flutter_move_task_back.git
+```
+
 ### import
 ```dart
 import 'package:flutter_move_task_back/flutter_move_task_back.dart';
