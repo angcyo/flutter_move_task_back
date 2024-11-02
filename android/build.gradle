@@ -2,14 +2,14 @@ group 'com.mouEsam.flutter_move_task_back'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.6.10'
+    ext.kotlin_version = '1.9.24'
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.2'
+        classpath 'com.android.tools.build:gradle:8.7.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -26,10 +26,11 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 33
+    if (project.android.hasProperty("namespace")) namespace 'com.mouEsam.flutter_move_task_back'
+    compileSdk 34
 
     defaultConfig {
-        minSdkVersion 24
+        minSdk 21
         multiDexEnabled true
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         consumerProguardFiles 'proguard-rules.pro'
@@ -44,7 +45,6 @@ android {
     }
 
     compileOptions {
-        coreLibraryDesugaringEnabled true
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
@@ -55,7 +55,6 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.annotation:annotation:1.1.0'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+    implementation 'androidx.annotation:annotation:1.9.1'
+    //implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
