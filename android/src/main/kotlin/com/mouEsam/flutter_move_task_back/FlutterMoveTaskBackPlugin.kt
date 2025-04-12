@@ -6,9 +6,6 @@ import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
 import io.flutter.plugin.common.BinaryMessenger
 import io.flutter.plugin.common.MethodChannel
-import io.flutter.plugin.common.PluginRegistry.Registrar
-
-
 
 class FlutterMoveTaskBackPlugin : FlutterPlugin, ActivityAware {
 
@@ -16,14 +13,7 @@ class FlutterMoveTaskBackPlugin : FlutterPlugin, ActivityAware {
     private lateinit var handler: MethodCallHandlerImp
 
     companion object {
-
         private const val CHANNEL_NAME = "flutter_move_task_back"
-
-        @JvmStatic
-        fun registerWith(registrar: Registrar) {
-            val plugin = FlutterMoveTaskBackPlugin()
-            plugin.setupChannel(registrar.messenger(), registrar.activity())
-        }
     }
 
     private fun setupChannel(messenger: BinaryMessenger, activity: Activity?) {
